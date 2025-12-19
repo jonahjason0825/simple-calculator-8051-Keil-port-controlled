@@ -1,5 +1,5 @@
 #include <reg51.h>
-void calculate(int, int, int);
+void calculate(char, char, char);
 void serial_init(void);
 void serial_tx(char);
 void serial_tx_string(char *);
@@ -12,7 +12,7 @@ void main(void){
 		b=P3;
 		calculate(choice, a, b);
 }
-void calculate(int n, int op1, int op2){
+void calculate(char n, char op1, char op2){
 	switch (n){
 		case 0x01:
 			P0=op1+op2;
@@ -75,3 +75,4 @@ void serial_tx_string(char *s){
 	
 
 		
+
