@@ -16,9 +16,13 @@ void calculate(int n, int op1, int op2){
 	switch (n){
 		case 0x01:
 			P0=op1+op2;
+			if (OV==1)
+				HANDLE_ARITHMETIC_ERROR();
 			break;
 		case 0x02:
 			P0=op1-op2;
+			if (OV==1)
+				HANDLE_ARITHMETIC_ERROR();
 			break;
 		case 0x03:
 			P0=op1*op2;
@@ -69,4 +73,5 @@ void serial_tx_string(char *s){
 			
 			
 	
+
 		
